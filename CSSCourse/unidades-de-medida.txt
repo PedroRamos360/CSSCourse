@@ -1,0 +1,13 @@
+Absolutas:
+   polegada: in
+   centímetro: cm
+   milímetro: mm
+   ponto: pt
+   pica: pc
+
+
+Relativas:
+   em
+   ex
+   px
+   %
