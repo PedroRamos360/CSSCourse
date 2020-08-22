@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-   .pink-text {
-      color: pink;
+   #orange-text {
+      color: orange;
    }
+   .pink-text {
+      color: pink !important;
+   }
+
    .blue-text {
       color: blue;
    }
 
    body {
+      display: flex;
+      flex-direction: column;
       background-color: black;
       color: green;
       font-family: monospace;
@@ -17,15 +23,21 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Styles</title>
 </head>
 <body>
-   <!--
-   HTML escolhe sempre a estilização mais específica por isso a cor
-   gerada na página sera rosa.
-   Se duas classes se contradizerem o HTML usa a última mencionada no
-   css.
-   -->
-   <h1 class="pink-text blue-text">Hello World</h1>
+   <h1 class="pink-text blue-text" id="orange-text" style="color: white;">Hello World</h1>
+   <a href="./02.html">Back</a>
+   <a href="./04.html">Next</a>
 </body>
 </html>
+
+<!--
+HTML escolhe sempre a estilização mais específica => body, classes,
+ids, estilizações direto no elemento
+Se duas estilos se contradizerem o HTML usa o último mencionada no
+css.
+!important mostra que é o estilo mais importante de todos e este
+que deve ser aplicado.
+-->
+

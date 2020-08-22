@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+   /*
+   :root é usado para criar variáveis que ficarão disponíveis
+   em todo o html
+   */
+   :root {
+      --box1: red;
+      --box2: green;
+      --box3: blue;
+   }
+   .content {
+      width: 100vw;
+      height: 100vh;
+   }
+
+   .box {
+      width: 400px;
+      height: 100px;
+   }
+
+   /* Medias são usadas para responsividade da página */
+   @media (min-width: 700px) {
+      .box {
+         width: 600px;
+         height: 130px;
+      }
+   }
+</style>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CSS Variables</title>
+</head>
+<body>
+   <div class="content">
+      <div class="box" style="background-color: var(--box1, black);"></div>
+      <div class="box" style="background-color: var(--box2, red);"></div>
+      <div class="box" style="background-color: var(--box3, yellow);"></div>
+      <!--
+      É possível usar cores alternativas caso aja algum problema com a
+      váriavel
+      -->
+      <a href="./04.html">Back</a>
+      <a href="./06.html">Next</a
+   </div>
+</body>
+</html>
