@@ -1,21 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
    <style>
-      .d1{background:LightSkyBlue;}
-      .d2{background:LightSalmon;}
-      .d3{background:LightGreen;}
-      .d4{background:LightPink;}
-      .d5{background:PaleTurquoise;}
+      .d1 {
+         background: LightSkyBlue;
+         grid-area: footer; /* ocupa a área footer */
+      }
+      .d2 {
+         background: LightSalmon;
+         /* alinha horizontalmente */
+         justify-self: center; /* justifica o item 2 ao centro da célula */
+      }
+      .d3 {
+         background: LightGreen;
+         /* alinha verticalmente */
+         align-self: center;
+      }
+      .d4 {
+         background: LightPink;
+         /* colocar um elemento em uma área da grid sem template:
+         os dois primeiros números são as coordenadas
+         do início e os dois últimos são as coordenadas
+         do fim*/
+         grid-area: 4/1/4/4
+      }
+      .d5 {
+         background: PaleTurquoise;
+         grid-column: 2 / 4; /* Vai da segunda à quarta coluna */
+         grid-row: 2 / 4; /* Vai da segunda à quarta linha */
+      }
 
-      .content {
+      main {
+         background: LightGrey;
+         height: 300px;
+         width: 100vw;
          font-size: 40px;
          font-family: monospace;
          font-weight: bold;
 
+         /* alinhar os filhos de main */
+         justify-content: center;
+         align-items: center;
+
          display: grid;
-         /* Número de colunas e width delas*/
-         grid-template-rows: 50px 60px;
-         grid-template-columns: 100px 100px 100px;
+         /* colocar linhas e colunas */
+         /*grid-template-columns: 1fr 1fr 1fr*/
+         /*grid-template-columns: repeat(3, 1fr);*/
+         grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+         /* auto fill coloca o máximo número de colunas possíveis na tela
+         auto fit ocupa todo espaço da tela, estendendo os componentes para garantir
+         que caiba
+         */
+         grid-template-rows: 1fr 1fr 1fr;
+         /* Colocar espaço entre linhas e colunas
+         grid-column-gap: 10px;
+         grid-row-gap: 10px;
+         ou: */
+         grid-gap: 10px 20px;
+
+         /* criar áreas para a grid */
+
+         grid-template-areas:
+            "header header header" /* 1° row */
+            ". content content" /* 2° row "." é interpretado como um item vazio */
+            "footer footer footer"; /* 3° row */
+
       }
    </style>
 <head>
@@ -24,12 +72,14 @@
    <title>Grid</title>
 </head>
 <body>
-   <div class="content">
+   <main>
       <div class="d1">1</div>
       <div class="d2">2</div>
       <div class="d3">3</div>
       <div class="d4">4</div>
       <div class="d5">5</div>
-   </div>
+   </main>
+   <a href="./05.html">Back</a>
+   <a href="./07.html">Next</a>
 </body>
 </html>

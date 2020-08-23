@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+   main {
+      background: LightGrey;
+
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+
+      font-size: 40px;
+      font-family: monospace;
+      font-weight: bold;
+
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto 1fr auto;
+
+      grid-gap: 10px;
+
+      grid-template-areas:
+         "advertise header"
+         "advertise content"
+         "advertise footer";
+   }
+
+   .d1 {
+      background: LightSkyBlue;
+      grid-area: header;
+      height: 100%;
+      width: 100%;
+   }
+   .d2 {
+      background: LightGreen;
+      grid-area: advertise;
+      height: 100%;
+      width: 100%;
+   }
+   .d3 {
+      background: LightSalmon;
+      grid-area: content;
+      height: 100%;
+      width: 100%;
+
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+   }
+   .p1 {
+      background: green;
+      height: 100%;
+   }
+   .p2 {
+      background: yellow;
+      height: 100%;
+   }
+   .d4 {
+      background: LightPink;
+      grid-area: footer;
+      height: 100%;
+      width: 100%;
+   }
+
+   @media (max-width: 700px) {
+      main {
+         grid-template-columns: 200px 1fr;
+         grid-template-rows: 50px auto 50px;
+         grid-template-areas:
+            "header header"
+            "advertise content"
+            "footer footer";
+      }
+   }
+
+   @media (max-width: 565px) {
+      main {
+         grid-template-columns: 1fr;
+         grid-template-rows: 50px auto 1fr auto;
+         grid-template-areas:
+            "header"
+            "advertise"
+            "content"
+            "footer";
+      }
+   }
+</style>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Page with grid</title>
+</head>
+<body>
+   <main>
+      <div class="d1">header</div>
+      <div class="d2">advertise</div>
+      <div class="d3">
+         <p class="p1">Paragraph1</p>
+         <p class="p2">Paragraph2</p>
+      </div>
+      <div class="d4">footer</div>
+   </main>
+   <a href="./06.html">Back</a>
+   <a href="./08.html">Next</a>
+</body>
+</html>

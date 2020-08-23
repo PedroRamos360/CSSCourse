@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+   main {
+      background: LightGrey;
+      display: flex;
+      height: 500px;
+      /* joga os elementos que não encaixam para a próxima linha
+      flex-wrap: wrap;
+      */
+
+      /* set flex-direction */
+      /*flex-direction: column;*/
+      flex-direction: row;
+      /*alinha verticalmente
+      align-items: center;
+      alinha horizontalmente
+      justify-content: center;
+      */
+   }
+   .box {
+      height: 200px;
+   }
+
+   .box1 {
+   	background: blue;
+      /*alinha o elemento em vez de seus filhos*/
+      align-self: center;
+      /* order é usado para rearranjar items*/
+      order: 2;
+      /* flex padrão: flex: 0 1 auto => flex-grow flex-shrink flex-basis*/
+      flex: 2 2 150px;
+      /* flex-basis para setar o início do tamanho do elemento
+      flex-basis: 10em;
+      o contrário de flex-shrink
+      flex-grow: 1;
+      encolhe um elemento para caber na tela
+      flex-shrink: 1;
+      */
+   }
+
+   .box2 {
+      align-self: flex-end;
+      background: red;
+      order: 1;
+      flex: 1 1 150px;
+      /*
+      flex-basis: 20em;
+      flex-grow: 2;
+      flex-shrink: 2;
+      */
+   }
+</style>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Display flex</title>
+</head>
+<body>
+   <main>
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+   </main>
+   <a href="./07.html">Back</a>
+   <a href="./09.html">Next</a>
+</body>
+</html>
